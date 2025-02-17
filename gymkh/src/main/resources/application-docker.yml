@@ -1,0 +1,17 @@
+spring:
+  application:
+   name: rakshithlearnSpringboot
+  datasource:
+    url: jdbc:postgresql://${db_host}:5432/vignesh
+    username: vignesh
+    password: vignesh
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 1234
+
+teacher:
+  name: "jiraiya"

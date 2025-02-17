@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: postgres-learning
+    image: postgres
+    environment:
+      POSTGRES_USER: vignesh
+      POSTGRES_PASSWORD: vignesh
+    ports:
+      - '5432:5432'
+      #volumes:
+      #  - learning-volume:/var/lib/postgresql/data
+    networks:
+      - postgres
+    restart: unless-stopped
+  pgadmin:
+    container_name: pgadmin-learning
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: '${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}'
+      PGADMIN_DEFAULT_PASSWORD: '${PGADMIN_DEFAULT_PASSWORD:-admin}'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - '5050:80'
+    networks:
+      - postgres
+  rakshith:
+    image: rakshith:1.1
+    environment:
+      db_host: postgres
+      SPRING.PROFILES.ACTIVE: docker
+    ports:
+      - 1234:1234
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+# jdbc:postgresql:host:portnumber/db
+# jbdc:postgresql://localhost:5432/vignesh

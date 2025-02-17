@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: gymauth
+  datasource:
+    password: vignesh
+    username: vignesh
+    url: jdbc:postgresql://localhost:5432/vignesh
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8082
+jwt:
+  token:
+    key: ba60c2179506a59fb32895f27a7088bd32806b6d78b3a8efe85d37bcd83f652903feba09992ef92b65033a03598cdfd3b064c2069054ca7d6a598dc69e4399be
+    expiration: 30
