@@ -1,6 +1,6 @@
-package org.exploreandlearn.rakshithlearnSpringboot.repository;
+package org.exploreandlearn.gymkh.repository;
 
-import org.exploreandlearn.rakshithlearnSpringboot.entity.VariationEntity;
+import org.exploreandlearn.gymkh.entity.VariationEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

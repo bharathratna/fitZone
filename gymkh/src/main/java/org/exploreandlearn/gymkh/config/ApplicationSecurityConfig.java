@@ -1,4 +1,4 @@
-package org.exploreandlearn.rakshithlearnSpringboot.config;
+package org.exploreandlearn.gymkh.config;
 
 import org.exploreandlearn.auth.filter.JwtAuhFilter;
 import org.springframework.context.annotation.Bean;

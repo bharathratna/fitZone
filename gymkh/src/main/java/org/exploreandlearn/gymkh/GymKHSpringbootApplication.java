@@ -1,13 +1,13 @@
-package org.exploreandlearn.rakshithlearnSpringboot;
+package org.exploreandlearn.gymkh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RakshithlearnSpringbootApplication {
+public class GymKHSpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RakshithlearnSpringbootApplication.class, args);
+		SpringApplication.run(GymKHSpringbootApplication.class, args);
 	}
 
 

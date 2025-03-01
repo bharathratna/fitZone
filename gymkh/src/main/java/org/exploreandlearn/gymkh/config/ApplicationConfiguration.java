@@ -1,4 +1,4 @@
-package org.exploreandlearn.rakshithlearnSpringboot.config;
+package org.exploreandlearn.gymkh.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

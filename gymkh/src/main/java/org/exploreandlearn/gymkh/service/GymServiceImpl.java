@@ -1,8 +1,8 @@
-package org.exploreandlearn.rakshithlearnSpringboot.service;
+package org.exploreandlearn.gymkh.service;
 
-import org.exploreandlearn.rakshithlearnSpringboot.model.BMIRequest;
-import org.exploreandlearn.rakshithlearnSpringboot.entity.Client;
-import org.exploreandlearn.rakshithlearnSpringboot.repository.GymRepository;
+import org.exploreandlearn.gymkh.model.BMIRequest;
+import org.exploreandlearn.gymkh.entity.Client;
+import org.exploreandlearn.gymkh.repository.GymRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

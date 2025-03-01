@@ -1,4 +1,4 @@
-package org.exploreandlearn.rakshithlearnSpringboot.response;
+package org.exploreandlearn.gymkh.response;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,5 +1,6 @@
 package org.exploreandlearn.auth.filter;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.exploreandlearn.auth.service.CustomUserDetailService;
 import org.exploreandlearn.auth.utility.JwtUtil;
 import jakarta.servlet.FilterChain;
@@ -39,18 +40,24 @@ public class JwtAuhFilter extends OncePerRequestFilter {
             return;
         }
         token = authHeader.substring(7);
-        username = jwtUtil.extractUsername(token);
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = userInfoService.loadUserByUsername(username);
-            if (jwtUtil.validateToken(token, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        null,
-                        userDetails.getAuthorities()
-                );
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+        try {
+            username = jwtUtil.extractUsername(token);
+            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = userInfoService.loadUserByUsername(username);
+                if (jwtUtil.validateToken(token, userDetails)) {
+                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                            userDetails,
+                            null,
+                            userDetails.getAuthorities()
+                    );
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
             }
+            filterChain.doFilter(request, response);
+        }catch (ExpiredJwtException exception){
+            logger.error(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        filterChain.doFilter(request, response);
+
     }
 }

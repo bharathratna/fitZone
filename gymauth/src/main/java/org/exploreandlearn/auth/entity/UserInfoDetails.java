@@ -1,5 +1,6 @@
 package org.exploreandlearn.auth.entity;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,16 +14,20 @@ public class UserInfoDetails  implements UserDetails {
 
     private String name;
     private String password;
+    @Getter
+    private Integer memberId;
     private Set<GrantedAuthority> roles;
     public UserInfoDetails(UserInfo userInfo) {
 
         this.name = userInfo.getName();
         this.password = userInfo.getPassword();
+        this.memberId = userInfo.getId();
         this.roles = Arrays.stream(
                 userInfo.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toSet());
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;

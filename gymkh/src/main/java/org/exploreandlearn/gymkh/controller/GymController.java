@@ -1,9 +1,9 @@
-package org.exploreandlearn.rakshithlearnSpringboot.controller;
+package org.exploreandlearn.gymkh.controller;
 
 
-import org.exploreandlearn.rakshithlearnSpringboot.model.BMIRequest;
-import org.exploreandlearn.rakshithlearnSpringboot.entity.Client;
-import org.exploreandlearn.rakshithlearnSpringboot.service.GymServiceImpl;
+import org.exploreandlearn.gymkh.model.BMIRequest;
+import org.exploreandlearn.gymkh.entity.Client;
+import org.exploreandlearn.gymkh.service.GymServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

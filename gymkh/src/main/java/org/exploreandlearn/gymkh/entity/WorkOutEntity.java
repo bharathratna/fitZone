@@ -1,4 +1,4 @@
-package org.exploreandlearn.rakshithlearnSpringboot.entity;
+package org.exploreandlearn.gymkh.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

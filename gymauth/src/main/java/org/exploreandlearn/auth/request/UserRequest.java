@@ -13,5 +13,7 @@ public class UserRequest {
     private Long mobileNo;
     @Nonnull
     private String password;
-    private String roles;
+    private String gender;
+    private String confirmPassword;
+    private int indicator;
 }

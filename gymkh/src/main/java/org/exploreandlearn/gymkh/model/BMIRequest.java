@@ -1,4 +1,4 @@
-package org.exploreandlearn.rakshithlearnSpringboot.model;
+package org.exploreandlearn.gymkh.model;
 
 import lombok.Data;
 
