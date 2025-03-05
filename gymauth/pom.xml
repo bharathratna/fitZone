@@ -7,9 +7,12 @@
         <groupId>com.exploreandlearn</groupId>
         <artifactId>fitzone</artifactId>
         <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <groupId>com.exploreandlearn</groupId>
     <artifactId>gymauth</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -48,6 +51,14 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
 
